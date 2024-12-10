@@ -25,7 +25,7 @@ def get_user_data(name, password):
                             "name": user_info['name'],
                             "password": user_info['password'],
                             "bio": user_info['bio'],
-                            "tools": user_info['tool']  # JSON 필드 이름 맞추기
+                            "tool": user_info['tool']  # JSON 필드 이름 맞추기
                         }
                     else:
                         return None  # 이름 또는 비밀번호 불일치
