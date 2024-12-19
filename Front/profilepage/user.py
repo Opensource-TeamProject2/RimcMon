@@ -4,6 +4,7 @@ import os
 
 # 현재 파일 위치 기준으로 상위 경로를 추가하여 모듈 불러오기
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../..")
+
 from Python_Script_Profile.insert_to_db import insert_user_data
 from Python_Script_Profile.select_from_db import get_user_data
 from Python_Script_Profile.update_user_data import update_user_data
@@ -23,7 +24,7 @@ def login_page():
     username = st.text_input("이름", placeholder="사용자의 이름을 입력해주세요")
     password = st.text_input("비밀번호", placeholder="비밀번호를 입력해주세요", type="password")
 
-    if st.button("로그인"):
+    if st.button("로그인", key="login_button"):
         if not username or not password:
             st.error("이름과 비밀번호가 입력되지 않았습니다.")
             return
@@ -40,7 +41,7 @@ def login_page():
 
     st.write("---")
     st.write("등록된 사용자가 아니신가요?")
-    if st.button("신규 사용자 등록"):
+    if st.button("신규 사용자 등록",key="signup_button"):
         st.session_state.current_page = "register"
 #기술 목록 조회
 def get_skills():

@@ -70,9 +70,8 @@ def display_posters(data):
         st.write("데이터가 없습니다.")
 
 # Streamlit 앱 실행
-if __name__ == "__main__":
-    if st.button("메인으로 돌아가기"):
-        st.session_state["page"] = "main"
-        st.rerun()
-    apply_custom_css()
-    display_posters(data)
+if st.button("메인으로 돌아가기"):
+    st.session_state["page"] = "main"
+    st.rerun()
+apply_custom_css()
+display_posters(data)
